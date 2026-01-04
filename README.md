@@ -45,7 +45,7 @@ To prevent falling into "value traps" during bond market crashes (e.g., 2022), t
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/market-regime-sentinel.git](https://github.com/YOUR_USERNAME/market-regime-sentinel.git)
+    git clone [https://github.com/YOUR_USERNAME/market-regime-sentinel.git]
     ```
 2.  **Deploy on QuantConnect:**
     * Create a new project in the Algorithm Lab.
