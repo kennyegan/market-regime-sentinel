@@ -1,0 +1,12 @@
+# QuantConnect Specific
+config.json
+*.json
+*.xml
+
+# Python
+__pycache__/
+*.py[cod]
+*.csv
+.vscode/
+.idea/
+.env
