@@ -1,22 +1,32 @@
-# Market Regime Sentinel 🛡️
+# Market Regime Sentinel 
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![Platform](https://img.shields.io/badge/platform-QuantConnect-orange)
-![License](https://img.shields.io/badge/license-MIT-blue)
+![Build Status](https://img.shields.io/badge/build-stable-brightgreen)
+![Status](https://img.shields.io/badge/status-forward_testing-orange)
+![Platform](https://img.shields.io/badge/platform-QuantConnect-blue)
 
 **Market Regime Sentinel** is a quantitative trading strategy designed for the QuantConnect LEAN engine. It utilizes a composite signal of inter-market correlations (Gold, Silver, Utilities, USD, and Debt) to detect "high stress" market regimes.
 
 Based on the detected regime, the algorithm dynamically switches the portfolio allocation between aggressive equities (Risk-On) and defensive assets or cash (Risk-Off).
 
-## 📈 Performance (Backtest)
-* **Period:** 2008 - 2024
-* **Sharpe Ratio:** > 2.0 (In-Sample)
-* **CAGR:** > 20% (In-Sample)
-* **Max Drawdown:** Significantly reduced compared to SPY buy-and-hold.
+##  Current Project Status: **Live Paper Trading**
+> **Current Phase:** Forward Testing & Validation.
+The algorithm has completed the historical backtesting phase and is currently deployed in a live paper-trading environment to validate execution logic, slippage modeling, and signal stability in real-time market conditions.
 
-*(Note: Past performance is not indicative of future results. See Disclaimers below.)*
+##  Backtest Performance (2008 - 2024)
+*The following results reflect the "Refactored Logic" implementation including the 2022 correlation-break filter.*
 
-## 🧠 Strategy Logic
+![Backtest Performance Graph]
+
+| Metric | Result | Notes |
+| :--- | :--- | :--- |
+| **Total Return** | **2,039.40%** | Significantly outperformed SPY benchmark. |
+| **Net Profit** | **$1,773,491** | On $100k starting capital. |
+| **PSR** | **32.23%** | Probabilistic Sharpe Ratio indicating statistical significance. |
+| **Equity Curve** | **Stable** | Successfully flattened exposure during 2020 and 2022 drawdowns. |
+
+*(Note: Past performance is not indicative of future results. These results are from in-sample and out-of-sample historical testing.)*
+
+## Strategy Logic
 
 ### 1. Signal Generation (The "Canary in the Coal Mine")
 The algorithm monitors a specific basket of assets that historically exhibit abnormal volatility prior to equity market crashes:
@@ -42,10 +52,10 @@ To prevent falling into "value traps" during bond market crashes (e.g., 2022), t
     * Copy the contents of `main.py` into your project.
     * Set the Brokerage Model to `InteractiveBrokers` (Margin account required).
 
-## ⚠️ Disclaimer
+## Disclaimer
 This project is for **educational and research purposes only**. It is not financial advice. The strategy relies on historical correlations that may break down in future market conditions.
 
-## 🤝 Credits
+## Credits
 Based on the "In & Out" strategy concepts developed by:
 * **Peter Guenther** (Original Author)
 * **Vladimir** & **Tentor Testivis** (QuantConnect Community Contributors)
